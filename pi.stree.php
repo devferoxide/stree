@@ -6,7 +6,7 @@ class Stree
 {
     public function preg_replace_array()
     {
-        $string = ee()->TMPL->tagdata;
+        $string = ee()->TMPL->fetch_param('subject') ?: ee()->TMPL->tagdata;
         $pattern = ee()->TMPL->fetch_param('pattern');
         $replacements = explode('|', ee()->TMPL->fetch_param('replacements'));
 
@@ -15,7 +15,7 @@ class Stree
 
     public function after()
     {
-        $string = ee()->TMPL->tagdata;
+        $string = ee()->TMPL->fetch_param('subject') ?: ee()->TMPL->tagdata;
         $search = ee()->TMPL->fetch_param('search');
 
         return Str::after($string, $search);
@@ -23,7 +23,7 @@ class Stree
 
     public function after_last()
     {
-        $string = ee()->TMPL->tagdata;
+        $string = ee()->TMPL->fetch_param('subject') ?: ee()->TMPL->tagdata;
         $search = ee()->TMPL->fetch_param('search');
 
         return Str::afterLast($string, $search);
