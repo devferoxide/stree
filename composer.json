@@ -1,0 +1,11 @@
+{
+  "name": "devferoxide/str",
+  "description": "Just another string manipulation add-on for ExpressionEngine.",
+  "config": {
+    "vendor-dir": "Support"
+  },
+  "require": {
+    "illuminate/support": "^7.21",
+    "ramsey/uuid": "^4.0"
+  }
+}
